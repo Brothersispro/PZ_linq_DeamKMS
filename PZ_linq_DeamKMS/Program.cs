@@ -21,7 +21,12 @@ namespace PZ_linq_DeamKMS
 
             };
             var listbook = list.Where(u=>u.Year<=1994 && u.Pages>200).ToList();
+            var listbook2 = listbook.Select(u => u.Author).ToList();
+
+            //listbook2.ForEach(u =>Console.WriteLine(u));
+
             listbook.ForEach(book =>Console.WriteLine(book.Author+" " + book.Year +" " + book.Pages));
+            
             Console.ReadKey();
 
         }
